@@ -3,7 +3,7 @@
 // styles
 wp_enqueue_style( 
     'tailwind', 
-    get_template_directory_uri() . '/dist/output.css', 
+    get_template_directory_uri() . '/dist/css/style.css', 
     [], 
     "1.0.0"
 );

@@ -1,11 +1,12 @@
 module.exports = {
-	content: ["./src/**/*.{php,js}"],
+	mode: "jit", // Just-In-Time Compiler
+	purge: ["./src/**/*.html"],
+	darkMode: false, // or 'media' or 'class'
 	theme: {
-		extend: {
-			fontFamily: {
-				montserrat: ['"Montserrat"', "sans-serif"],
-			},
-		},
+		extend: {},
+	},
+	variants: {
+		extend: {},
 	},
 	plugins: [],
 };

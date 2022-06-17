@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+** Vars
+*/
+
+:root {
+	--purple: #5d3c92;
+	--teal: #26bb9d;
+	--grey: #5c5c5c;
+	--font-sm: 13px;
+}
+.purple {
+	color: var(--purple);
+}
+.teal-bg {
+	background-color: var(--teal);
+	color: #fff;
+}
+.grey-bg {
+	background-color: var(--grey);
+	color: #fff;
+}
+.font-sm {
+	font-size: var(--font-sm);
+}
+
+/* 
+** wp overrides 
+*/
+
+body {
+	font-family: montserrat;
+}
+
+/* nav */
+
+#primary-menu {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+.menu-item {
+	font-size: var(--font-sm);
+	font-weight: 300;
+	color: var(--body-color);
+	margin: 0 10px;
+}
+.menu-toggle {
+	display: none;
+}

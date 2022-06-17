@@ -1,0 +1,17 @@
+{
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#5a155a",
+		"titleBar.activeBackground": "#8a298a",
+		"titleBar.activeForeground": "#fff"
+	},
+	"intelephense.stubs": [
+		"wordpress",
+		"Core",
+		"phpdbg",
+		"libvirt-php",
+		"mosquitto-php",
+		"standard"
+	],
+
+	"editor.formatOnSave": true
+}

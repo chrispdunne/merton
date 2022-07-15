@@ -1,5 +1,4 @@
 (function ($) {
-	console.log("PDF");
 	var count = 0;
 
 	$(document).ready(function () {

@@ -10,10 +10,16 @@
 	--purple: #5d3c92;
 	--teal: #26bb9d;
 	--grey: #5c5c5c;
+	--blue: ##5ba9cf;
+	--red: #fa5d6a;
 	--font-sm: 13px;
 }
 .purple {
 	color: var(--purple);
+}
+.purple-bg {
+	background-color: var(--purple);
+	color: #fff;
 }
 .teal-bg {
 	background-color: var(--teal);
@@ -21,6 +27,14 @@
 }
 .grey-bg {
 	background-color: var(--grey);
+	color: #fff;
+}
+.blue-bg {
+	background-color: var(--blue);
+	color: #fff;
+}
+.red-bg {
+	background-color: var(--red);
 	color: #fff;
 }
 .font-sm {
@@ -33,21 +47,4 @@
 
 body {
 	font-family: montserrat;
-}
-
-/* nav */
-
-#primary-menu {
-	display: flex;
-	height: 100%;
-	align-items: center;
-}
-.menu-item {
-	font-size: var(--font-sm);
-	font-weight: 300;
-	color: var(--body-color);
-	margin: 0 10px;
-}
-.menu-toggle {
-	display: none;
 }

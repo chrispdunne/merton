@@ -56,6 +56,7 @@ function devHTML() {
 }
 
 function devStyles() {
+	console.log("dev styles running!!!");
 	const tailwindcss = require("tailwindcss");
 	return src(`${options.paths.src.css}/**/*.scss`)
 		.pipe(sass().on("error", sass.logError))

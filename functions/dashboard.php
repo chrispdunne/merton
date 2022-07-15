@@ -26,7 +26,6 @@ function merton_dashboard_widget() {
         );
         $schemes = get_posts( $args );   
      
-        // echo "<pre>" . print_r( $schemes, true) .  "</pre>";
         foreach( $schemes as $scheme ) {
             echo "<div><a href='$scheme->guid'>$scheme->post_title</a></div>";
         }
@@ -35,18 +34,6 @@ function merton_dashboard_widget() {
 }
 
 function merton_video_widget() {
-
-    // $query_images_args = array(
-    //     'post_type'      => 'attachment',
-    //     'post_mime_type' => 'video/mp4',
-    //     'post_status'    => 'inherit',
-    //     'posts_per_page' => - 1,
-    // );
-    
-    // $query_images = new WP_Query( $query_images_args );
-    
-    // $images = array();
-
     $query_video_args = array(
         'post_type'      => 'video',
          'posts_per_page' => - 1,
@@ -67,19 +54,8 @@ function merton_video_widget() {
         echo '</td>';
 
         echo '</tr>';   
-        // wp_insert_post([
-        //     'ID' => $key + 199,
-        //     'post_content' => '[video width="1920" height="1080" mp4="' 
-        //         . wp_get_attachment_url( $vid->ID )
-        //         . '"][/video]',
-        //     'post_title' => $vid->post_title,
-        //     'post_type' => 'video'
-        // ],true,true);
-  
-
     }
     echo "</table>";
-    
 }
 
 function merton_custom_dashboard_widgets() {

@@ -3,6 +3,7 @@
     <div class="site-branding">
         <?php logo( is_front_page() ) ?>
     </div><!-- .site-branding -->
+
     <nav id="site-navigation" class="main-navigation hidden items-center "> 
         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <?php esc_html_e('Primary Menu', 'merton'); ?>
@@ -12,6 +13,14 @@
             array(
                 'theme_location' => 'menu-1',
                 'menu_id'        => 'primary-menu',
+            )
+        );
+        ?>
+        <?php
+        wp_nav_menu(
+            array(
+                'theme_location' => 'menu-2',
+                'menu_id'        => 'secondary-menu',
             )
         );
         ?>

@@ -1,0 +1,9 @@
+.pdfemb-viewer {
+	max-height: 45px;
+	&.active {
+		max-height: initial;
+	}
+}
+.pdfemb-fsp-content .pdfemb-viewer {
+	max-height: initial;
+}

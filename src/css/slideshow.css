@@ -1,6 +1,7 @@
 .slideshow {
   overflow: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -38,4 +39,20 @@
         color: var(--purple); }
 
 .slide-controls {
-  background: red; }
+  background: white; }
+
+.slide-controls__button {
+  color: white;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 100%;
+  border: 2px solid var(--purple);
+  margin: 0 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out; }
+  .slide-controls__button:hover {
+    background-color: var(--purple-dark); }
+  .slide-controls__button.active {
+    background-color: var(--purple); }

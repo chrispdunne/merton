@@ -1,6 +1,7 @@
 .slideshow {
 	overflow: scroll;
 	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
 	&::-webkit-scrollbar {
 		display: none;
 	}
@@ -46,5 +47,23 @@
 }
 
 .slide-controls {
-	background: red;
+	background: white;
+}
+.slide-controls__button {
+	color: white;
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	border-radius: 100%;
+	border: 2px solid var(--purple);
+	margin: 0 0.5rem;
+	cursor: pointer;
+	background-color: transparent;
+	transition: background-color 0.2s ease-in-out;
+	&:hover {
+		background-color: var(--purple-dark);
+	}
+	&.active {
+		background-color: var(--purple);
+	}
 }

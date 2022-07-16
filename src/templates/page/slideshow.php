@@ -23,7 +23,8 @@ if ( $slideshow ) {
 
     echo '<div class="slide-controls text-center absolute left-1/2	">';
     foreach ( $slideshow as $key => $slide ) {
-        echo '<a href="#slide-' . $key . '">o</a>';
+        $first_item_class = $key === 0 ? ' active' : '';
+        echo '<a class="slide-controls__button' . $first_item_class . '" data-index="' . $key . '" href="#slide-' . $key . '"></a>';
     }
     echo '</div>';
 }

@@ -1,0 +1,19 @@
+.btn {
+	display: inline-block;
+	padding: 0.8rem 1rem;
+	color: #fff;
+	background-color: var(--purple);
+	&:hover {
+		color: var(--teal);
+	}
+}
+.btn-teal {
+	background-color: var(--teal);
+	&:hover {
+		color: var(--purple);
+	}
+}
+.btn-sm {
+	padding: 0.4rem 0.7rem;
+	font-size: 0.8rem;
+}

@@ -2,6 +2,7 @@
 $slideshow = get_field( 'slides' );
 // echo '<pre>' . print_r( $slideshow, true ) . '</pre>';
 if ( $slideshow ) {
+    echo '<div class="relative">';
     echo '<div class="slideshow">';
     echo '<div class="slideshow-inner">';
     foreach ( $slideshow as $key => $slide ) {
@@ -21,10 +22,11 @@ if ( $slideshow ) {
     echo '</div>';
     echo '</div>';
 
-    echo '<div class="slide-controls text-center absolute left-1/2	">';
+    echo '<div class="slide-controls text-center absolute left-1/2	bottom-0">';
     foreach ( $slideshow as $key => $slide ) {
         $first_item_class = $key === 0 ? ' active' : '';
         echo '<a class="slide-controls__button' . $first_item_class . '" data-index="' . $key . '" href="#slide-' . $key . '"></a>';
     }
+    echo '</div>';
     echo '</div>';
 }

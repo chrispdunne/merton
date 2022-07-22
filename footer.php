@@ -3,7 +3,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php get_template_part( 'src/templates/footer' ); ?>
 
 </body>
 </html>

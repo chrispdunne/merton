@@ -1,0 +1,7 @@
+.tweets {
+  gap: 1rem 1rem; }
+
+.tweet {
+  background: var(--grey-light);
+  flex: 1 1 0;
+  padding: 2rem; }

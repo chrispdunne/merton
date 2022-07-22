@@ -12,20 +12,13 @@
  * @package merton
  */
 
-get_header(); ?>
+get_header();
+?>
 
 	<main id="primary" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -36,18 +29,14 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'src/templates/content', get_post_type() );
+				get_template_part( 'src/templates/loop', get_post_type() );
 
 			endwhile;
 
 			the_posts_navigation();
 
-		else :
-
-			get_template_part( 'src/templates/content', 'none' );
-
-		endif;
-		?>
+ 
+		endif; ?>
 
 	</main><!-- #main -->
 

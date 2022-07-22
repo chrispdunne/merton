@@ -23,12 +23,13 @@ function merton_setup() {
     // This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'merton' ),
-            'menu-2' => esc_html__( 'Secondary', 'merton' ),
-            'menu-3' => esc_html__( 'Schools', 'merton' ),
-            'menu-4' => esc_html__( 'Parents', 'merton' ),
-            'menu-5' => esc_html__( 'Young People', 'merton' ),
-            'menu-6' => esc_html__( 'Company', 'merton' ),
+			'menu-1' =>  'Primary', 
+            'menu-2' =>  'Secondary', 
+            'menu-3' =>  'Schools', 
+            'menu-4' =>  'Parents', 
+            'menu-5' =>  'Young People', 
+            'menu-6' =>  'Company', 
+            'menu-7' =>  'Footer', 
 		)
 	);
 }

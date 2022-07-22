@@ -27,7 +27,7 @@
 			}
 			count++;
 		}
-
-		$(".pdfemb-viewer").append("<h3 style='position:absolute'>test</h3>");
+		//
+		// $(".pdfemb-viewer").append("<h3 style='position:absolute'>test</h3>");
 	});
 })(jQuery);

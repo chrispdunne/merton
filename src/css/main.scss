@@ -10,7 +10,8 @@
 	--purple: #5d3c92;
 	--teal: #26bb9d;
 	--grey: #5c5c5c;
-	--blue: ##5ba9cf;
+	--grey-light: #f0f0f0;
+	--blue: #5ba9cf;
 	--red: #fa5d6a;
 	--font-sm: 13px;
 }
@@ -29,6 +30,9 @@
 	background-color: var(--grey);
 	color: #fff;
 }
+.light-grey-bg {
+	background-color: var(--grey-light);
+}
 .blue-bg {
 	background-color: var(--blue);
 	color: #fff;
@@ -41,10 +45,37 @@
 	font-size: var(--font-sm);
 }
 
+svg {
+	display: inline-block;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
 /* 
 ** wp overrides 
 */
 
 body {
 	font-family: montserrat;
+}
+
+h1 {
+	font-size: theme("fontSize.6xl");
+	font-weight: bold;
+	margin: 10px 0;
+}
+h2 {
+	font-size: theme("fontSize.3xl");
+	font-weight: bold;
+	margin: 10px 0;
+}
+h3 {
+	font-size: theme("fontSize.2xl");
+	font-weight: bold;
+	margin: 10px 0;
+}
+h4 {
+	font-size: theme("fontSize.xl");
 }

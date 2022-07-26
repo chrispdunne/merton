@@ -28,7 +28,7 @@
         ?>
         </div>
       
-        <button class="teal-bg font-sm pt-2 px-3 pb-2.5 font-semibold mx-3"><a href="/wp-admin">My Account</a></button>
+        <button class="green-bg font-sm pt-2 px-3 pb-2.5 font-semibold mx-3"><a href="/wp-admin">My Account</a></button>
         <?php require get_template_directory() . '/src/templates/icons/search.php'  ?>
         <?php get_search_form() ?>
 

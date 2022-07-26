@@ -1,9 +1,7 @@
 <?php
 
 // @TODO env vars for these keys?
-$api_key = 'py4BaJve0fcBXq6gAdduac8pM';
-$api_secret = 'akRsET8YdKzloJ239IakC0Ya0pdIXFFsfwMV4veYlkK11L3gXH';
-$bearer = 'AAAAAAAAAAAAAAAAAAAAACyqewEAAAAAr2Flwo4sx2m%2BlB52bWDzCw4Rus8%3DaOGSmKAO35B0hyCLeliKpRT9yGFpD8dBo7AitA0OWGpekTp0nr';
+$bearer = TWITTER_BEARER;
 $merton_id = '2408819120';
 
 $url = "https://api.twitter.com/2/users/$merton_id/tweets?max_results=5&tweet.fields=created_at,id,entities";
@@ -27,7 +25,7 @@ if ( $tweets->data ) {
     echo '<div>';
     echo '<h2 class="text-center font-bold my-6">';
     echo '<a href="https://twitter.com/mertonssp" target="_blank">' ;
-    echo '<span class="w-3">';
+    echo '<span class="w-">';
     require get_template_directory() . '/src/templates/icons/twitter.php';
     echo '</span>';
     echo '@MertonSSP</a>';

@@ -16,7 +16,7 @@
             <h3><?php echo $cluster->name; ?></h3>
             <?php foreach ( $schools as $school ) : ?>
                 <div>
-                    <a><?php echo $school->post_title; ?></a>
+                    <a href="<?php echo get_the_permalink( $school->ID ) ?>"><?php echo $school->post_title; ?></a>
                 </div>
             <?php endforeach; ?>
         </div>

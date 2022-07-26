@@ -4,11 +4,11 @@
   color: #fff;
   background-color: var(--purple); }
   .btn:hover {
-    color: var(--teal); }
+    color: var(--green); }
 
-.btn-teal {
-  background-color: var(--teal); }
-  .btn-teal:hover {
+.btn-green {
+  background-color: var(--green); }
+  .btn-green:hover {
     color: var(--purple); }
 
 .btn-sm {

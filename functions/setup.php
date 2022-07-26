@@ -13,6 +13,7 @@ function merton_frontend_scripts() {
         'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap'
     );
     wp_enqueue_script( 'merton-scripts',  get_template_directory_uri() . '/dist/js/scripts.js', ['jquery'] );
+    wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js#asyncdefer', [] );
 }
 add_action( 'wp_enqueue_scripts', 'merton_frontend_scripts' );
 

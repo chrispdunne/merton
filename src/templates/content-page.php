@@ -14,7 +14,7 @@
 	<?php get_template_part( 'src/templates/page/hero' ); ?>
 	<?php get_template_part( 'src/templates/page/slideshow' ); ?>
 	<?php get_template_part( 'src/templates/page/acf-content' ); ?>
-	<div class="max-w-7xl my-12 mx-auto px-12"><?php the_content() ?></div>
+	<?php if (!is_front_page() ) : ?><div class="max-w-7xl my-12 mx-auto px-12"><?php the_content() ?></div><?php endif; ?>
 	<?php get_template_part( 'src/templates/downloads' ); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

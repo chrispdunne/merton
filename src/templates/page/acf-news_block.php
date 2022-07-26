@@ -26,7 +26,7 @@ if ( $posts ) {
         echo get_the_post_thumbnail( $post->ID, 'large' );
         echo "<small class='w-full text-xs py-2'>$date</small>";
         echo "<h4 class='font-bold py-2'>$post->post_title</h4>";    
-        echo "<span class='btn btn-sm btn-teal my-4'>Read More</span>";
+        echo "<span class='btn btn-sm btn-green my-4'>Read More</span>";
         echo "</a>";
  
     }

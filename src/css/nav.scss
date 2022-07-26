@@ -9,7 +9,7 @@
 		color: var(--body-color);
 		margin: 0 10px;
 		&:hover {
-			color: var(--teal);
+			color: var(--green);
 		}
 	}
 }
@@ -49,7 +49,7 @@
 				margin-right: 0.1rem;
 			}
 			&:hover {
-				background-color: var(--teal);
+				background-color: var(--green);
 				> ul.sub-menu {
 					display: block;
 				}
@@ -60,7 +60,7 @@
 		display: none;
 		position: absolute;
 		left: 0;
-		background-color: var(--teal);
+		background-color: var(--green);
 		min-width: 100%;
 		width: 20rem;
 		padding: 1rem 1.25rem;

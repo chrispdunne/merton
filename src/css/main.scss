@@ -7,12 +7,15 @@
 */
 
 :root {
-	--purple: #5d3c92;
-	--teal: #26bb9d;
-	--grey: #5c5c5c;
+	--purple: #5e3c93;
+	--green: #00a0ac;
+	--grey: #58595b;
 	--grey-light: #f0f0f0;
-	--blue: #5ba9cf;
-	--red: #fa5d6a;
+	--blue: #28aae2;
+	--green2: #a6cb3b;
+	--yellow: #ffc618;
+	--orange: #f26b29;
+	--pink: #d52c91;
 	--font-sm: 13px;
 }
 .purple {
@@ -22,8 +25,8 @@
 	background-color: var(--purple);
 	color: #fff;
 }
-.teal-bg {
-	background-color: var(--teal);
+.green-bg {
+	background-color: var(--green);
 	color: #fff;
 }
 .grey-bg {
@@ -37,8 +40,20 @@
 	background-color: var(--blue);
 	color: #fff;
 }
-.red-bg {
-	background-color: var(--red);
+.green2-bg {
+	background-color: var(--green2);
+	color: #fff;
+}
+.yellow-bg {
+	background-color: var(--yellow);
+	color: #fff;
+}
+.orange-bg {
+	background-color: var(--orange);
+	color: #fff;
+}
+.pink-bg {
+	background-color: var(--pink);
 	color: #fff;
 }
 .font-sm {

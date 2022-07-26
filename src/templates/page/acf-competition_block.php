@@ -20,7 +20,7 @@ if ( $competitions ) {
     foreach ( $competitions as $comp ) {
         echo "<h4 class='font-bold mb-6'>$comp->post_title</h4>";
         echo "<p class='text-sm'>" . get_the_excerpt( $comp ) . "</p>";
-        echo "<a class='mt-6 btn btn--teal btn-sm' href='" . get_permalink( $comp->ID ) . "'>Read More</a>";
+        echo "<a class='mt-6 btn btn--green btn-sm' href='" . get_permalink( $comp->ID ) . "'>Read More</a>";
     }
     echo '</div>';
     echo '</div>';

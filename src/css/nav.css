@@ -8,7 +8,7 @@
     color: var(--body-color);
     margin: 0 10px; }
     #primary-menu .menu-item:hover {
-      color: var(--teal); }
+      color: var(--green); }
 
 @screen lg {
   #primary-menu {
@@ -40,14 +40,14 @@
       .secondary-menu ul.menu > li:last-child {
         margin-right: 0.1rem; }
       .secondary-menu ul.menu > li:hover {
-        background-color: var(--teal); }
+        background-color: var(--green); }
         .secondary-menu ul.menu > li:hover > ul.sub-menu {
           display: block; }
   .secondary-menu ul.sub-menu {
     display: none;
     position: absolute;
     left: 0;
-    background-color: var(--teal);
+    background-color: var(--green);
     min-width: 100%;
     width: 20rem;
     padding: 1rem 1.25rem; }

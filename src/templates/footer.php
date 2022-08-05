@@ -14,7 +14,7 @@
 		];
 		for ( $i = 3; $i <= 6; $i++ ) : ?>
 		<div class="flex-1">
-		<h3 class='font-bold my-6'><?php echo $titles[$i] ?></h3>
+		<h3 class='font-bold my-6 text-white'><?php echo $titles[$i] ?></h3>
 		<?php
 			wp_nav_menu(
 				array(

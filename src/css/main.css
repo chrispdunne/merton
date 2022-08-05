@@ -22,14 +22,26 @@
 .purple-bg {
   background-color: var(--purple);
   color: #fff; }
+  .purple-bg h2,
+  .purple-bg h3,
+  .purple-bg h4 {
+    color: #fff; }
 
 .green-bg {
   background-color: var(--green);
   color: #fff; }
+  .green-bg h2,
+  .green-bg h3,
+  .green-bg h4 {
+    color: #fff; }
 
 .grey-bg {
   background-color: var(--grey);
   color: #fff; }
+  .grey-bg h2,
+  .grey-bg h3,
+  .grey-bg h4 {
+    color: #fff; }
 
 .light-grey-bg {
   background-color: var(--grey-light); }
@@ -37,22 +49,42 @@
 .blue-bg {
   background-color: var(--blue);
   color: #fff; }
+  .blue-bg h2,
+  .blue-bg h3,
+  .blue-bg h4 {
+    color: #fff; }
 
 .green2-bg {
   background-color: var(--green2);
   color: #fff; }
+  .green2-bg h2,
+  .green2-bg h3,
+  .green2-bg h4 {
+    color: #fff; }
 
 .yellow-bg {
   background-color: var(--yellow);
   color: #fff; }
+  .yellow-bg h2,
+  .yellow-bg h3,
+  .yellow-bg h4 {
+    color: #fff; }
 
 .orange-bg {
   background-color: var(--orange);
   color: #fff; }
+  .orange-bg h2,
+  .orange-bg h3,
+  .orange-bg h4 {
+    color: #fff; }
 
 .pink-bg {
   background-color: var(--pink);
   color: #fff; }
+  .pink-bg h2,
+  .pink-bg h3,
+  .pink-bg h4 {
+    color: #fff; }
 
 .font-sm {
   font-size: var(--font-sm); }
@@ -67,7 +99,9 @@ p {
 ** wp overrides 
 */
 body {
-  font-family: montserrat; }
+  font-family: montserrat;
+  color: #5c5c5c;
+  font-weight: 300; }
 
 h1 {
   font-size: theme("fontSize.6xl");
@@ -77,12 +111,19 @@ h1 {
 h2 {
   font-size: theme("fontSize.3xl");
   font-weight: bold;
-  margin: 10px 0; }
+  margin: 10px 0;
+  color: var(--purple); }
 
 h3 {
   font-size: theme("fontSize.2xl");
   font-weight: bold;
-  margin: 10px 0; }
+  margin: 10px 0;
+  color: var(--purple); }
 
 h4 {
-  font-size: theme("fontSize.xl"); }
+  font-size: theme("fontSize.xl");
+  color: var(--purple); }
+
+#fax {
+  visibility: hidden;
+  opacity: 0; }

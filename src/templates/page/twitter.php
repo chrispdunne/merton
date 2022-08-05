@@ -17,24 +17,23 @@ if ( false === ( $tweet_object = get_transient( 'merton_tweets' ) ) ) {
     $context = stream_context_create( $options );
     $tweet_object =  file_get_contents( $url, false, $context );
 
-    set_transient( 'merton_tweets', $tweet_object, 30 * MINUTE_IN_SECONDS );
+    set_transient( 'merton_tweets', $tweet_object, 60 * MINUTE_IN_SECONDS );
 }  
 $tweets = json_decode( $tweet_object );
 
 if ( $tweets->data ) {
     echo '<div>';
-    echo '<h2 class="text-center font-bold my-6">';
+    echo '<h4 class="text-center font-bold my-6">';
     echo '<a href="https://twitter.com/mertonssp" target="_blank">' ;
     echo '<span class="w-">';
-    require get_template_directory() . '/src/templates/icons/twitter.php';
+    icon('twitter');
     echo '</span>';
     echo '@MertonSSP</a>';
-    echo '</h2>';
+    echo '</h4>';
     echo '<div class="tweets flex max-w-5xl mx-auto">';
     foreach ( $tweets->data as $key => $tweet ) {
         if ($key < 3) {
-            $time = strtotime($tweet->created_at);
-            $date = date('F j, Y', $time);
+            $date = merton_date( $tweet->created_at );
             echo '<div class="tweet">';
             echo '<a href="https://twitter.com/twitter/statuses/' . $tweet->id . '">';
 

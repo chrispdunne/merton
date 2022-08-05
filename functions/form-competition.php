@@ -1,18 +1,4 @@
 <?php
-
-function merton_handle_competition_form( $form_reponse ) {
-    if ( ! isset( $form_reponse['merton_competition_nonce_field'] ) 
-        || ! wp_verify_nonce( $form_reponse['merton_competition_nonce_field'], 'merton_competition_nonce_action' ) 
-    ) {
-        exit;
-    } else {
-        $form_is_valid = merton_validate_form( $form_reponse['g-recaptcha-response'], $form_reponse['fax'] );
-        if ( $form_is_valid ) {
-            merton_competition_form_success( $form_reponse );
-        } 
-    }
-}
-
 function merton_competition_form_success( $form_reponse ) {
     $title = sanitize_text_field( $form_reponse['title'] );
     $comments = sanitize_text_field( $form_reponse['comments'] );

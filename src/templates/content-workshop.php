@@ -10,14 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>">
-	
+
 	<?php get_template_part( 'src/templates/hero' ) ?>
 
 	<div class="max-w-5xl mx-auto py-12 flex flex-row-reverse">
 
-		<?php get_template_part( 'src/templates/sidebar', null, [ 'template_content' => 'src/templates/competition/details' ] ) ?>
-
-		<div class="entry-content w-2/3">
+		<div class="entry-content">
 			<?php
 			the_content(
 				sprintf(
@@ -32,11 +30,13 @@
 					),
 					wp_kses_post( get_the_title() )
 				)
-			); 
-			?>
+			);  ?>
+
 		</div><!-- .entry-content -->
 
 	</div>
-	<?php get_template_part( 'src/templates/form/competition' ); s?>
+
+	<?php get_template_part( 'src/templates/form/workshop' ) ?>
+
 
 </article><!-- #post-<?php the_ID(); ?> -->

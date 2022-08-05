@@ -24,14 +24,29 @@
 .purple-bg {
 	background-color: var(--purple);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .green-bg {
 	background-color: var(--green);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .grey-bg {
 	background-color: var(--grey);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .light-grey-bg {
 	background-color: var(--grey-light);
@@ -39,22 +54,47 @@
 .blue-bg {
 	background-color: var(--blue);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .green2-bg {
 	background-color: var(--green2);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .yellow-bg {
 	background-color: var(--yellow);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .orange-bg {
 	background-color: var(--orange);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .pink-bg {
 	background-color: var(--pink);
 	color: #fff;
+	h2,
+	h3,
+	h4 {
+		color: #fff;
+	}
 }
 .font-sm {
 	font-size: var(--font-sm);
@@ -74,6 +114,8 @@ p {
 
 body {
 	font-family: montserrat;
+	color: #5c5c5c;
+	font-weight: 300;
 }
 
 h1 {
@@ -85,12 +127,19 @@ h2 {
 	font-size: theme("fontSize.3xl");
 	font-weight: bold;
 	margin: 10px 0;
+	color: var(--purple);
 }
 h3 {
 	font-size: theme("fontSize.2xl");
 	font-weight: bold;
 	margin: 10px 0;
+	color: var(--purple);
 }
 h4 {
 	font-size: theme("fontSize.xl");
+	color: var(--purple);
+}
+#fax {
+	visibility: hidden;
+	opacity: 0;
 }

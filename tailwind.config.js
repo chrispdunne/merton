@@ -4,7 +4,11 @@ module.exports = {
 	purge: ["./**/*.php"],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
-		extend: {},
+		extend: {
+			minWidth: {
+				72: "18rem",
+			},
+		},
 	},
 	variants: {
 		extend: {},

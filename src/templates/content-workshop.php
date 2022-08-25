@@ -11,11 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>">
 
-	<?php get_template_part( 'src/templates/hero' ) ?>
-
 	<div class="max-w-5xl mx-auto py-12 flex flex-row-reverse">
 
-		<div class="entry-content">
+		<?php get_template_part( 'src/templates/sidebar', null, [ 'template_content' => 'src/templates/workshop/details' ] ) ?>
+
+		<div class="entry-content w-2/3 mr-12">
 			<?php
 			the_content(
 				sprintf(

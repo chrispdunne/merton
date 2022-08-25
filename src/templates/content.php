@@ -9,8 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'max-w-5xl mx-auto' ); ?>>
-	<?php get_template_part( 'src/templates/hero' ) ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'max-w-5xl mx-auto my-12' ); ?>>
 
 	<div class="entry-content">
 		<?php

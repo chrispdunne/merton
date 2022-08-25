@@ -44,3 +44,8 @@ add_action( 'after_setup_theme', 'merton_setup' );
 
 //feat images for pages
 add_theme_support( 'post-thumbnails', array( 'post', 'page', 'competition', 'team_member', 'testimonial', 'workshop' ) );
+
+function merton_excerpt_length( $length ) {
+    return 30;
+}
+add_filter('excerpt_length', 'merton_excerpt_length');

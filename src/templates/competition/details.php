@@ -35,6 +35,19 @@ if ( $team_requirements ) { ?>
     <div class="text-sm"><?php echo $team_requirements ?></div>
 <?php }
 
+$resources = get_field( 'event_resources' );
+if ( $resources && count( $resources ) > 0 ) { ?>
+ 
+    <h4 class="mb-2 mt-4">Resources</h4>
+    <div class="text-sm mb-8"><?php foreach ( $resources as $r ) { 
+        echo "<a class='block text-xs mb-2' href='" . $r['resource']['url'] . "'>";
+        icon('download');
+        echo $r['resource']['title'];
+        echo '</a>';
+    } ?></div>
+ 
+<?php }
+
 $entries = get_posts( [
     'post_type' => 'competition_entry', 
     'numberposts' => 50,
@@ -55,9 +68,21 @@ if ( $entries ) { ?>
 
     endforeach;
 } ?>
-<a href="#enter-competition" class="btn">Enter the competition</a>
+<a href="#enter-competition" class="btn mb-8">Enter the competition</a>
+<?php 
 
-Competition cluster 
+$clusters = wp_get_post_terms( get_the_ID(), 'cluster' );
+$types = wp_get_post_categories( get_the_ID(), [ 'fields' => 'names' ] ); 
+
+if ( $clusters && count( $clusters ) > 0 ) { ?>
+    <h4 class="mb-2 mt-4">Clusters</h4>
+    <p class="text-sm"><?php foreach ( $clusters as $cluster ) { echo $cluster->name;  } ?></p>
+<?php }
+
+if ( $types && count( $types ) > 0 ) { ?>
+    <h4 class="mb-2 mt-4">Competition type</h4>
+    <p class="text-sm"><?php foreach ( $types as $type ) { echo $type;  } ?></p>
+<?php }
+
  
-Competition type 
  

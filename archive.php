@@ -12,15 +12,19 @@
  * @package merton
  */
 
-get_header();
-?>
+get_header(); ?>
 
 	<main id="primary" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
-
-			/* Start the Loop */
+ 
+            get_template_part( 'src/templates/hero-archive', get_post_type() ); ?>
+			
+            <div class="grid grid-cols-3 gap-12 max-w-5xl mx-auto my-12">
+	 
+		
+			<?php /* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
@@ -33,10 +37,16 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation();  ?>
+		 
+            </div>
+		
+		<?php else :
 
- 
-		endif; ?>
+			get_template_part( 'src/templates/content', 'none' );
+
+		endif;
+		?>
 
 	</main><!-- #main -->
 

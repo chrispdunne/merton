@@ -60,7 +60,7 @@ function merton_video_widget() {
 
 function merton_custom_dashboard_widgets() {
     wp_add_dashboard_widget( 'custom_merton_widget', 'Schemes Of Work', 'merton_dashboard_widget');
-    wp_add_dashboard_widget( 'custom_merton_widget_2', 'Videos', 'merton_video_widget');
+    // wp_add_dashboard_widget( 'custom_merton_widget_2', 'Videos', 'merton_video_widget');
 }
 add_action( 'wp_dashboard_setup', 'merton_custom_dashboard_widgets' );
  

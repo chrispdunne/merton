@@ -2,18 +2,19 @@
 
 // styles
 function merton_frontend_scripts() {
+    $theme = wp_get_theme();
     wp_enqueue_style( 
         'tailwind', 
         get_template_directory_uri() . '/dist/css/style.css', 
         [], 
-        "1.0.0"
+        $theme->version
     );
     wp_enqueue_style( 
         'font', 
         'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap'
     );
-    wp_enqueue_script( 'merton-scripts',  get_template_directory_uri() . '/dist/js/scripts.js', ['jquery'] );
-    wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js#asyncdefer', [] );
+    wp_enqueue_script( 'merton-scripts',  get_template_directory_uri() . '/dist/js/scripts.js', ['jquery'], $theme->version );
+    wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js#asyncdefer', [], $theme->version );
 }
 add_action( 'wp_enqueue_scripts', 'merton_frontend_scripts' );
 

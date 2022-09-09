@@ -1,3 +1,10 @@
+.sub-menu {
+	display: none;
+	&:hover {
+		display: block;
+		z-index: 1;
+	}
+}
 ul.menu {
 	list-style-type: none;
 	margin: 0;
@@ -28,11 +35,16 @@ ul.menu {
 	background-color: var(--purple);
 	color: #fff;
 	width: 100%;
+	box-shadow: inset 0px -6px 14px 0px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	.menu-header-sub-nav-container {
 		width: 100%;
 		max-width: 80rem;
 		margin: auto;
 		padding: 0 1.25rem;
+	}
+	li {
+		list-style-type: none;
 	}
 	ul.menu {
 		display: flex;
@@ -45,6 +57,9 @@ ul.menu {
 			> a {
 				padding: 1.25rem;
 				display: inline-block;
+				&:hover {
+					color: var(--purple);
+				}
 			}
 			&:first-child {
 				margin-left: 0.1rem;
@@ -56,18 +71,19 @@ ul.menu {
 				background-color: var(--green);
 				> ul.sub-menu {
 					display: block;
+					z-index: 1;
 				}
 			}
 		}
 	}
 	ul.sub-menu {
-		display: none;
 		position: absolute;
 		left: 0;
 		background-color: var(--green);
 		min-width: 100%;
 		width: 20rem;
 		padding: 1rem 1.25rem;
+		margin: 0;
 		> li {
 			border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 			&:last-child {
@@ -78,6 +94,9 @@ ul.menu {
 				padding: 0.5rem 0;
 				font-weight: normal;
 				font-size: 0.75rem;
+				&:hover {
+					color: var(--purple);
+				}
 			}
 		}
 	}

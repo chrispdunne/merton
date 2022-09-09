@@ -8,14 +8,15 @@
 	display: none;
 	&.active {
 		display: block;
+		z-index: 1;
 	}
 	background: var(--purple);
 	color: #fff;
 	position: fixed;
 	overflow-y: scroll;
 	left: 0;
-	top: 110px;
-	height: calc(100vh - 110px);
+	top: 0;
+	height: 100vh;
 	width: 100%;
 	padding: 1rem 1.5rem;
 
@@ -66,7 +67,8 @@
 	.sub-menu {
 		display: none;
 		padding: 0 1rem 1rem;
-		&.active {
+		&.active,
+		&:hover {
 			display: block;
 		}
 		li {

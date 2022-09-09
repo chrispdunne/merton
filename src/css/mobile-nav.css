@@ -9,8 +9,8 @@
   position: fixed;
   overflow-y: scroll;
   left: 0;
-  top: 110px;
-  height: calc(100vh - 110px);
+  top: 0;
+  height: 100vh;
   width: 100%;
   padding: 1rem 1.5rem;
   -ms-overflow-style: none;
@@ -18,7 +18,8 @@
   scrollbar-width: none;
   /* Firefox */ }
   .mobile-menu.active {
-    display: block; }
+    display: block;
+    z-index: 1; }
   .mobile-menu::-webkit-scrollbar {
     display: none; }
   .mobile-menu .close-menu {
@@ -53,7 +54,7 @@
   .mobile-menu .sub-menu {
     display: none;
     padding: 0 1rem 1rem; }
-    .mobile-menu .sub-menu.active {
+    .mobile-menu .sub-menu.active, .mobile-menu .sub-menu:hover {
       display: block; }
     .mobile-menu .sub-menu li a {
       font-size: 1rem; }

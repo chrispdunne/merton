@@ -35,7 +35,7 @@
     </nav><!-- #site-navigation -->
 </header><!-- #masthead -->
  
-<div class="secondary-menu flex w-full">
+<div class="secondary-menu flex justify-center w-full">
     <?php
     wp_nav_menu(
         array(

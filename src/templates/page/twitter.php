@@ -30,11 +30,11 @@ if ( $tweets->data ) {
     echo '</span>';
     echo '@MertonSSP</a>';
     echo '</h4>';
-    echo '<div class="tweets flex max-w-5xl mx-auto">';
+    echo '<div class="px-4 lg:px-0 tweets md:flex max-w-5xl mx-auto">';
     foreach ( $tweets->data as $key => $tweet ) {
         if ($key < 3) {
             $date = merton_date( $tweet->created_at );
-            echo '<div class="tweet">';
+            echo '<div class="tweet my-4 md:my-0">';
             echo '<a href="https://twitter.com/twitter/statuses/' . $tweet->id . '">';
 
             echo '<div class="text-xs pb-4">' . $date . '</div>';

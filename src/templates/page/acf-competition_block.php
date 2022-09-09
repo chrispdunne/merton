@@ -15,15 +15,18 @@ $competitions = get_posts(
 );
 if ( $competitions ) {
     echo '<div class="text-center light-grey-bg py-12">';
-    echo '<div class="max-w-3xl mx-auto px-12 flex gap-12">';
+    echo '<div class="px-4 lg:px-0  max-w-5xl mx-auto md:grid gap-4 grid-cols-3">';
 
     foreach ( $competitions as $comp ) {
-        echo "<div>";
-        echo "<h4 class='font-bold mb-6'>$comp->post_title</h4>";
-        echo "<p class='text-sm'>" . get_the_excerpt( $comp ) . "</p>";
-        echo "<a class='mt-6 btn btn--green btn-sm' href='" . get_permalink( $comp->ID ) . "'>Read More</a>";
-        echo '</div>';
+        get_template_part( 'src/templates/loop', null, [ 'ID' => $comp->ID, 'excerpt' => false,'button'=>false] );
     }
     echo '</div>';
+    echo '<div><a class="btn mt-8" href="';
+    echo get_post_type_archive_link( 'competition' );
+    echo '">View all competitions</a></div>';
     echo '</div>';
 }  
+
+ 
+
+ 

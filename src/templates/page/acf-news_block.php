@@ -8,7 +8,7 @@ $posts = get_posts(
 );
 if ( $posts ) {
     echo '<div class="">';
-    echo '<div class="max-w-5xl flex mx-auto gap-4">';
+    echo '<div class="px-4 lg:px-0 max-w-5xl md:flex mx-auto gap-4">';
     foreach ( $posts as $key => $post ) {
         $date = merton_date( $post->post_date );
   

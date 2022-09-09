@@ -1,7 +1,7 @@
 <?php if ( $args ) : ?>
 <div>
-<div class="flex max-w-7xl mx-auto gap-12 my-12">
-    <div class="col-1 w-1/2 text-center">
+<div class="md:flex max-w-7xl mx-auto gap-12 my-12">
+    <div class="col-1 my-4 mx-4 md:w-1/2 text-center">
         <div 
             class="h-80 bg-cover" 
             style="background-image:url(<?php echo $args['image']['url'] ?>)"
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="col-2 w-1/2 text-center">
+    <div class="col-2 my-4 mx-4 md:w-1/2 text-center">
         <div 
             class="h-80 bg-cover" 
             style="background-image:url(<?php echo $args['image_2']['url'] ?>)"

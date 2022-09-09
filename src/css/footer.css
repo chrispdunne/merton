@@ -1,6 +1,7 @@
-.footer-menu li a {
-  border-left: 1px solid #fff;
-  padding: 0 10px; }
-
-.footer-menu li:first-child a {
-  border: 0; }
+.footer-menu li {
+  list-style-type: none; }
+  .footer-menu li a {
+    border-left: 1px solid #fff;
+    padding: 0 10px; }
+  .footer-menu li:first-child a {
+    border: 0; }

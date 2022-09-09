@@ -19,6 +19,26 @@ ul.menu {
     margin: 0 10px; }
     #primary-menu .menu-item:hover {
       color: var(--green); }
+    #primary-menu .menu-item a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: inline-block; }
+  #primary-menu .sub-menu {
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    margin: 0;
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px 20px; }
+    #primary-menu .sub-menu li {
+      list-style-type: none;
+      font-size: 90%; }
+      #primary-menu .sub-menu li a {
+        padding: 5px 0; }
+        #primary-menu .sub-menu li a:hover {
+          color: var(--grey); }
+  #primary-menu .menu-item-has-children:hover > .sub-menu {
+    display: block; }
 
 @screen lg {
   #primary-menu {

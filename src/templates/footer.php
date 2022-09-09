@@ -2,7 +2,7 @@
 	<a href="/about/vision-and-purpose">Click here to read our Vision and Purpose</a>
 </div>
 
-<div class="grey-bg pb-12">
+<div class="grey-bg pb-12 px-6">
 	<div class="flex max-w-7xl mx-auto font-light">
 
 		<?php 
@@ -26,7 +26,7 @@
 		<?php endfor; ?>
 	</div>
 </div>
-<div class="grey-bg text-xs border-t border-1 py-6">
+<div class="grey-bg text-xs border-t border-1 py-6 px-6">
 	<div class="max-w-7xl mx-auto flex justify-between items-center">
 		<div class="font-light">&copy;<?php date('Y') ?> Merton School Sport Partnership. Website by Lightning Pixels</div>
 		<div>

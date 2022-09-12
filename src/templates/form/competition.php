@@ -1,4 +1,30 @@
 <?php $nonce_name = 'merton_competition'; ?>
+<?php $competition_entries = get_posts([
+    'post_type' => 'competition_entry', 
+    'numberposts' => 99,
+    'meta_query' => array(
+        array(
+            'key'   => 'competition',
+            'value' => get_the_ID(),
+        )
+    )
+]);
+
+ 
+
+$event_full = false;
+if ( $competition_entries && !is_wp_error( $competition_entries ) )  {
+    if ( count( $competition_entries ) > 0 ) {
+       $max_entries = get_field( 'max_entries' );
+       if ( $max_entries || $max_entries === 0 ) {
+           if ( count( $competition_entries ) >= $max_entries ) {
+               $event_full = true;
+           }
+       }
+    }
+} 
+$disabled = get_field( 'disable_competition_entries', 'option' );
+if (!$disabled) : ?>
 <div class="green-bg">
 <div class="max-w-3xl mx-auto py-12">
 <form method="post" >
@@ -18,18 +44,7 @@
     <label class="block mb-6" for="school">School
         <select class="block w-full text-black" name="school" required>
             <option value="">Select school</option>
-            <?php 
-            $competition_entries = get_posts([
-                'post_type' => 'competition_entry', 
-                'numberposts' => 99,
-                'meta_query' => array(
-                    array(
-                        'key'   => 'competition',
-                        'value' => get_the_ID(),
-                    )
-                )
-            ]);
-            if ( $competition_entries && !is_wp_error( $competition_entries ) )  {
+            <?php if ( $competition_entries && !is_wp_error( $competition_entries ) )  {
                 $schools_to_exclude = [];
                 foreach ( $competition_entries as $entry ) {
                     $school_id = get_post_meta( $entry->ID, 'school', true );
@@ -60,6 +75,8 @@
 
     <input type="hidden" name="competition_id" id="competition_id" value="<?php echo get_the_ID() ?>" />
 
+    <input type="hidden" name="waitlist" id="waitlist" value="<?php echo $event_full ? 'true': 'false'; ?>" />
+
     <input type="text" id="fax" name="fax">
 
     <button class="btn block" type="submit">Submit</button>
@@ -70,3 +87,4 @@
 </div>
 </div>
 <?php merton_handle_form( $_POST, $nonce_name, 'merton_competition_form_success' );
+endif; // !disabled

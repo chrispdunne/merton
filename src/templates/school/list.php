@@ -2,6 +2,7 @@
 <?php foreach ( $args['clusters'] as $cluster ) : ?>
     <?php $schools = get_posts( [
         'post_type' => 'school',
+        'numberposts' => 30,
         'tax_query' => array(
             array(
                 'taxonomy' => 'cluster',

@@ -1,4 +1,6 @@
-<?php $nonce_name = 'merton_workshop'; ?>
+<?php $nonce_name = 'merton_workshop'; 
+$disabled = get_field( 'disable_workshop_entries', 'option' ) ;
+if (!$disabled) : ?>
 <div class="green-bg">
 <div class="max-w-3xl mx-auto py-12">
 <form method="post" id="workshop_entry_form">
@@ -60,3 +62,4 @@
 </div>
 </div>
 <?php merton_handle_form( $_POST, $nonce_name, 'merton_workshop_form_success' );
+endif; // !disabled

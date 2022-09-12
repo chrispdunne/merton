@@ -35,12 +35,12 @@ get_header(); ?>
 				 */
 				get_template_part( 'src/templates/loop', get_post_type() );
 
-			endwhile;
-
-			the_posts_navigation();  ?>
-		 
+			endwhile;  ?>
             </div>
-		
+			<div class="flex max-w-5xl mx-auto post-next-prev mb-8 gap-4">
+			<?php posts_nav_link(  ' | ',   '<< Previous',   'Next >>' ); ?>
+			</div>
+
 		<?php else :
 
 			get_template_part( 'src/templates/content', 'none' );

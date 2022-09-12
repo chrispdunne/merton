@@ -6,6 +6,7 @@ function merton_competition_form_success( $form_reponse ) {
     $competition_id = sanitize_text_field( $form_reponse['competition_id']);
     $email = sanitize_email( $form_reponse['email'] );
     $school_id = sanitize_text_field( $form_reponse['school']);
+    $waitlist = $form_reponse['waitlist'] === 'true';
 
     $competition = get_post( $competition_id );
     $school = get_post( $school_id );
@@ -20,7 +21,8 @@ function merton_competition_form_success( $form_reponse ) {
             'phone'         => $phone,
             'competition'   => $competition_id,
             'email'         => $email,
-            'school'        => $school_id
+            'school'        => $school_id,
+            'waitlist'      => $waitlist
         ]
         
     );

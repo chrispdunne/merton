@@ -1,6 +1,6 @@
 <?php $ID = $args['ID'] ?? get_the_ID(); ?>
-<a class="flex flex-col" href="<?php the_permalink() ?>">
-    <?php get_template_part( 'src/templates/thumbnail' ) ?>
+<a class="flex flex-col" href="<?php the_permalink( $ID ) ?>">
+    <?php get_template_part( 'src/templates/thumbnail', null, ['ID' => $ID] ) ?>
     <span class="text-xs font-bold inline-block mt-4"><?php 
         if ( get_field( 'start_datetime', $ID ) ) {
             echo date( 'jS F Y', strtotime( get_field( 'start_datetime', $ID ) ) );

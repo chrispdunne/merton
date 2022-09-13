@@ -5,16 +5,10 @@
 <div class="grey-bg pb-12 px-6">
 	<div class="flex max-w-7xl mx-auto font-light">
 
-		<?php 
-		$titles = [
-			3 => 'Schools',
-			4 => 'Parents',
-			5 => 'Young People',
-			6 => 'Company',
-		];
+		<?php 	 
 		for ( $i = 3; $i <= 6; $i++ ) : ?>
 		<div class="flex-1">
-		<h3 class='font-bold my-6 text-white'><?php echo $titles[$i] ?></h3>
+		<h3 class='font-bold my-6 text-white'><?php echo wp_get_nav_menu_name( 'menu-' . $i ) ?></h3>
 		<?php
 			wp_nav_menu(
 				array(

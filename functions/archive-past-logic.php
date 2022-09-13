@@ -8,7 +8,6 @@ function merton_archive_logic( $query ) {
 		if ( is_post_type_archive( ['competition', 'workshop'] ) ) {
 		 
 			// Let's change the query for category archives.
-
             $date_now = date('Y-m-d');
             $query->set( 'meta_query', [
                 [
@@ -21,10 +20,6 @@ function merton_archive_logic( $query ) {
             $query->set( 'meta_key', 'start_datetime' );
             $query->set( 'orderby', 'meta_value' );
             $query->set( 'order', 'ASC' );
-
-
-   
-
 		}
 	}
 }

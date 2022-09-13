@@ -35,11 +35,16 @@ function merton_competition_form_success( $form_reponse ) {
         $admin_email = get_option( 'admin_email', '' );
         $entry_edit_link = get_edit_post_link( $competition_creation_response );
         $event_date = get_field( 'start_datetime', $competition_id );
+        
+        $maybe_waitlist_title = $waitlist ? 'waitlist' : 'competition';
+        $maybe_waitlist_content = $waitlist ? 
+            '<p>Unfortunately the event is full, but you have been added to the waitlist' :
+            "<p>The event date is: $event_date </p>";
 
         wp_mail( 
             $admin_email,
-            'new competition entry',
-            "<h1>New competition entry</h1>
+            "new $maybe_waitlist_title entry",
+            "<h1>New $maybe_waitlist_title entry</h1>
             <p>Competition:  <a href='$competition->guid'>$competition->post_title</a> </p>
             <p>School:  $school->post_title </p>
             <p>Name:  $title </p>
@@ -52,10 +57,10 @@ function merton_competition_form_success( $form_reponse ) {
         );
 
         wp_mail( 
-            $form_reponse['email'] , 
+            $email, 
             'Thanks for your competition entry',
             "<h3>$title, thanks for your entry to $competition->post_title</h3>
-            <p>The event date is: $event_date </p>
+            $maybe_waitlist_content
             <p>For more information visit: <a href='$competition->guid'>$competition->post_title</a> </p>
             <p>Many thanks, Merton SSP</p>",
             ['Content-Type: text/html; charset=UTF-8']

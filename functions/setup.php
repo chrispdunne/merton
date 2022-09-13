@@ -27,11 +27,11 @@ function merton_setup() {
 		array(
 			'menu-1' =>  'Primary', 
             'menu-2' =>  'Secondary', 
-            'menu-3' =>  'Schools', 
-            'menu-4' =>  'Parents', 
-            'menu-5' =>  'Young People', 
-            'menu-6' =>  'Company', 
-            'menu-7' =>  'Footer', 
+            'menu-3' =>  'Footer 1', 
+            'menu-4' =>  'Footer 2', 
+            'menu-5' =>  'Footer 3', 
+            'menu-6' =>  'Footer 4', 
+            'menu-7' =>  'Footer Bottom', 
 		)
 	);
 }

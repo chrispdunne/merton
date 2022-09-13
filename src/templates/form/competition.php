@@ -23,6 +23,7 @@ if ( $competition_entries && !is_wp_error( $competition_entries ) )  {
        }
     }
 } 
+ 
 $disabled = get_field( 'disable_competition_entries', 'option' );
 if (!$disabled) : ?>
 <div class="green-bg">

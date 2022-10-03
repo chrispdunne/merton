@@ -5,7 +5,9 @@ function merton_schools() {
     ) );
  
     if ( $clusters ) :
+        ob_start();
         get_template_part( 'src/templates/school/list', null, ['clusters' => $clusters ] );
+        return ob_get_clean();
     endif; // clusters 
    
 }

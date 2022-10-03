@@ -11,7 +11,7 @@
             class="py-12 <?php echo strtolower( $args['background_color'] ) ?>-bg"
         >
             <h2 class="text-6xl font-bold py-4"><?php echo esc_html( $args['title'] ) ?></h2>
-            <p class="text-lg py-4"><?php echo esc_html( $args['text'] ) ?></p>
+            <p class="text-lg py-4 whitespace-pre-line"><?php echo esc_html( $args['text'] ) ?></p>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
             class="py-12 <?php echo strtolower( $args['background_color_2'] ) ?>-bg"
         >
             <h2 class="text-6xl font-bold py-4"><?php echo esc_html( $args['title_2'] ) ?></h2>
-            <p class="text-lg py-4"><?php echo esc_html( $args['text_2'] ) ?></p>
+            <p class="text-lg py-4 whitespace-pre-line"><?php echo esc_html( $args['text_2'] ) ?></p>
         </div>
     </div>
 </div>

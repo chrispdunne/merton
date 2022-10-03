@@ -19,12 +19,17 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) :
  
-            get_template_part( 'src/templates/hero-archive', get_post_type() ); ?>
+            get_template_part( 'src/templates/hero-archive', get_post_type() ); 
+			
+			get_template_part( 'src/templates/filters', get_post_type() );
+			
+			?>
 			
             <div class="grid grid-cols-3 gap-12 max-w-5xl mx-auto my-12">
 	 
-		
-			<?php /* Start the Loop */
+			<?php 
+
+			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
@@ -42,8 +47,8 @@ get_header(); ?>
 			</div>
 
 		<?php else :
-
-			get_template_part( 'src/templates/content', 'none' );
+ 
+			get_template_part( 'src/templates/content-none', get_archive_no_posts_type() );
 
 		endif;
 		?>

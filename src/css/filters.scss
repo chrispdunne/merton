@@ -1,0 +1,18 @@
+.filter-title {
+	cursor: pointer;
+}
+
+.checkbox-group {
+	display: none;
+	.btn {
+		cursor: pointer;
+	}
+}
+.active {
+	.checkbox-group {
+		display: block;
+	}
+	.filter-title svg {
+		transform: rotate(180deg);
+	}
+}

@@ -3,7 +3,7 @@ if ( $downloads ) : ?>
     <div class="max-w-7xl mx-auto pb-12 px-12">
         <h2>Downloads</h2>
         <?php foreach ( $downloads as $download ) : ?>
-            <a class="underline" href="<?php echo $download['file']['url'] ?>">
+            <a class="underline block" href="<?php echo $download['file']['url'] ?>">
                 <?php icon( 'download' ); 
                 echo $download['file']['title']; ?>
             </a>

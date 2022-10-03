@@ -61,7 +61,7 @@ if ( $entries ) { ?>
 
     endforeach;
 } ?>
-<a href="#enter-competition" class="btn mb-8">Enter the competition</a>
+<a href="#competition_entry_form" class="btn mb-8">Enter the competition</a>
 <?php 
 
 $clusters = wp_get_post_terms( get_the_ID(), 'cluster' );

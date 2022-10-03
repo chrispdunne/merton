@@ -5,6 +5,7 @@ function merton_load_color_field_choices( $field ) {
     $field['choices'] = array();
     
     $choices = [
+        'none',
         'purple',
         'green',
         'grey',

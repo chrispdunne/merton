@@ -4,7 +4,7 @@
     echo '<h2 class="text-center text-2xl mb-12">' . $args['title'] . '</h2>';
 endif; ?>
 <?php if ( $args['text'] ) :
-    echo '<div class="text-center">' . $args['text'] . '</div>';
+    echo '<div class="text-center whitespace-pre-line">' . $args['text'] . '</div>';
 endif; ?>
 <?php if ( $args['icon_list'] ) :
     echo '<div class="max-w-2xl mx-auto">';

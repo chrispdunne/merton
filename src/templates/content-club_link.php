@@ -13,6 +13,9 @@
 
 	<div class="entry-content">
 		<?php
+        get_template_part( 'src/templates/generic/location' );
+        get_template_part( 'src/templates/generic/email' );
+        get_template_part( 'src/templates/generic/phone' );
 		the_content(
 			sprintf(
 				wp_kses(
@@ -27,15 +30,8 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'merton' ),
-				'after'  => '</div>',
-			)
-		);
+ 
 		?>
 	</div><!-- .entry-content -->
-
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -1,0 +1,8 @@
+.gfield input,
+.gfield textarea {
+  border: 1px solid var(--grey-light); }
+
+.gform_button {
+  background: var(--purple);
+  color: #fff;
+  padding: 4px 14px 6px; }

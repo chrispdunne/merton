@@ -18,8 +18,12 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) :
+ 
+            get_template_part( 'src/templates/hero-archive', get_post_type() ); ?>
 			
-			/* Start the Loop */
+            <div class="max-w-7xl mx-auto my-12">
+		
+			<?php /* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
@@ -28,15 +32,17 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'src/templates/content', get_post_type() );
+				get_template_part( 'src/templates/loop', get_post_type() );
 
-			endwhile;
+			endwhile;  ?>
+            </div>
+			<div class="flex max-w-5xl mx-auto post-next-prev mb-8 gap-4">
+			<?php posts_nav_link(  ' | ',   '<< Previous',   'Next >>' ); ?>
+			</div>
 
-			the_posts_navigation(); 
-			 
-		else :
-		 
-			get_template_part( 'src/templates/content-none', get_archive_no_posts_type() );
+		<?php else :
+
+			get_template_part( 'src/templates/content', 'none' );
 
 		endif;
 		?>

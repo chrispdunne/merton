@@ -4,9 +4,9 @@
 ** Custom widgets
 */
 
-function merton_dashboard_widget() {
+function merton_dashboard_widget_schemes() {
    
-    $user = new WP_User(get_current_user_id()); 
+    $user = new WP_User( get_current_user_id() ); 
     $sow_roles = [];
 
     foreach ( $user->roles as $role ) {
@@ -21,8 +21,8 @@ function merton_dashboard_widget() {
             'meta_key'          => '_members_access_role',
             'meta_value'        => $sow_roles,
             'compare'           =>'IN',
-            'post_type' => 'scheme',
-            'posts_per_page' => -1
+            'post_type'         => 'scheme',
+            'posts_per_page'    => -1
         );
         $schemes = get_posts( $args );   
      
@@ -31,6 +31,46 @@ function merton_dashboard_widget() {
         }
 
     }  
+}
+
+function merton_dashboard_widget_competitions() {
+   
+    $user = new WP_User( get_current_user_id() ); 
+    
+    $args = array(
+        'meta_key'          => 'email',
+        'meta_value'        => $user->user_email,
+        'post_type'         => 'competition_entry',
+        'posts_per_page'    => 99
+    );
+    $entries = get_posts( $args );   
+    
+    foreach( $entries as $entry ) {
+        $competition_id = get_field( 'competition', $entry->ID );
+        $competition = get_post(  $competition_id );
+        echo "<div><a target='_blank' href='" . $competition->guid . "'>$competition->post_title</a></div>";
+    }
+
+}
+
+function merton_dashboard_widget_workshops() {
+   
+    $user = new WP_User( get_current_user_id() ); 
+    
+    $args = array(
+        'meta_key'          => 'email',
+        'meta_value'        => $user->user_email,
+        'post_type'         => 'workshop_entry',
+        'posts_per_page'    => 99
+    );
+    $entries = get_posts( $args );   
+    
+    foreach( $entries as $entry ) {
+        $workshop_id = get_field( 'workshop', $entry->ID );
+        $workshop = get_post(  $workshop_id );
+        echo "<div><a target='_blank' href='" . $workshop->guid . "'>$workshop->post_title</a></div>";
+    }
+
 }
 
 function merton_video_widget() {
@@ -59,8 +99,11 @@ function merton_video_widget() {
 }
 
 function merton_custom_dashboard_widgets() {
-    wp_add_dashboard_widget( 'custom_merton_widget', 'Schemes Of Work', 'merton_dashboard_widget');
-    // wp_add_dashboard_widget( 'custom_merton_widget_2', 'Videos', 'merton_video_widget');
+    wp_add_dashboard_widget( 'custom_merton_widget', 'Schemes Of Work', 'merton_dashboard_widget_schemes');
+    wp_add_dashboard_widget( 'custom_merton_widget_2', 'Competitions entered', 'merton_dashboard_widget_competitions');
+    wp_add_dashboard_widget( 'custom_merton_widget_3', 'Workshops signed up to', 'merton_dashboard_widget_workshops');
+
+    // wp_add_dashboard_widget( 'custom_merton_widget_4', 'Videos', 'merton_video_widget');
 }
 add_action( 'wp_dashboard_setup', 'merton_custom_dashboard_widgets' );
  

@@ -37,6 +37,7 @@ function merton_dashboard_widget_competitions() {
    
     $user = new WP_User( get_current_user_id() ); 
     
+    // Should it also query by school?
     $args = array(
         'meta_key'          => 'email',
         'meta_value'        => $user->user_email,
@@ -57,6 +58,7 @@ function merton_dashboard_widget_workshops() {
    
     $user = new WP_User( get_current_user_id() ); 
     
+    // Should it also query by school?
     $args = array(
         'meta_key'          => 'email',
         'meta_value'        => $user->user_email,
@@ -121,7 +123,7 @@ function merton_remove_dashboard_widgets(){
      
     foreach( $wp_meta_boxes["dashboard"] as $position => $core ){
         foreach( $core["core"] as $widget_id => $widget_info ) {
-            if ( $widget_id !== 'custom_merton_widget' ) {
+            if ( strpos( $widget_id, 'custom_merton_widget' ) === false ) {
                 remove_meta_box( $widget_id, 'dashboard', $position );
             }
         }

@@ -1,15 +1,15 @@
 
-<header id="masthead" class="site-header flex justify-between items-center max-w-7xl mx-auto p-5">
+<header id="masthead" class="site-header md:flex justify-between items-center max-w-7xl mx-auto p-5">
     <div class="site-branding">
         <?php logo( is_front_page() ) ?>
     </div><!-- .site-branding -->
 
-    <nav id="site-navigation" class="main-navigation flex items-center "> 
+    <nav id="site-navigation" class="main-navigation flex items-center justify-center"> 
         <button title="main menu" class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
             <?php require get_template_directory() . '/src/templates/icons/bars.php'  ?>
         </button>
 
-        <div class="mobile-menu">
+        <div class="mobile-menu flex flex-col justify-center">
             <button title="close menu" class="close-menu" aria-controls="mobile-menu">
                 <?php require get_template_directory() . '/src/templates/icons/close.php'  ?>
             </button>

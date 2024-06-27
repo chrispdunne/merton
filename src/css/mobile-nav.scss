@@ -4,10 +4,16 @@
 	}
 }
 
+.admin-bar .mobile-menu .close-menu {
+	top: 3.5rem;
+}
+
 .mobile-menu {
 	display: none;
 	&.active {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;;
 		z-index: 1;
 	}
 	background: var(--purple);
@@ -16,8 +22,8 @@
 	overflow-y: scroll;
 	left: 0;
 	top: 0;
-	height: 100vh;
-	width: 100%;
+	min-height: 100vh;
+	width: 100vw;
 	padding: 1rem 1.5rem;
 
 	&::-webkit-scrollbar {
@@ -28,8 +34,8 @@
 
 	.close-menu {
 		position: absolute;
-		top: 0.5rem;
-		right: 0.5rem;
+		top: 1rem;
+		right: 1rem;
 	}
 	li {
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -38,7 +44,7 @@
 		}
 		a {
 			display: inline-block;
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 			padding: 0.4rem 0;
 		}
 		&.menu-item-has-children {
@@ -80,7 +86,10 @@
 	#mobile-1 li:last-child {
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	}
-}
+	.menu-main-menu-container {
+		margin-top: 70px;
+	}
+} // .mobile-menu
 @screen lg {
 	.mobile-menu,
 	.mobile-menu.active {

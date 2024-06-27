@@ -34,7 +34,8 @@
 				'after'  => '</div>',
 			)
 		);
-		?>
+	
+		get_template_part( 'src/templates/downloads' ); ?>
 	</div><!-- .entry-content -->
 
 

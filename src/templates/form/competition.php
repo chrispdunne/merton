@@ -25,11 +25,14 @@ if ( $competition_entries && !is_wp_error( $competition_entries ) )  {
 } 
  
 $disabled = get_field( 'disable_competition_entries', 'option' );
-if (!$disabled) : ?>
+if (!$disabled) { ?>
 <div class="green-bg">
 <div class="max-w-3xl mx-auto py-12">
 <form method="post" id="competition_entry_form">
 
+    <?php if ( get_field( 'merton_only' ) && !is_user_logged_in() ) { ?>
+        <p>You must be logged in to enter this competition.</p>
+    <?php } else { ?>
     <label class="block mb-6" for="title">Full name
         <input class="w-full block text-black" type="text" name="title" required>
     </label> 
@@ -56,7 +59,7 @@ if (!$disabled) : ?>
             $schools = get_posts([
                 'post_type' => 'school',
                 'numberposts' => 99,
-                'orderby' => 'date',
+                'orderby' => 'title',
                 'order' => 'ASC',
                 'exclude' => $schools_to_exclude
             ]);
@@ -75,6 +78,8 @@ if (!$disabled) : ?>
     <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY ?>"></div>
 
     <input type="hidden" name="competition_id" id="competition_id" value="<?php echo get_the_ID() ?>" />
+    <input type="hidden" name="competition_name" id="competition_name" value="<?php echo get_the_title() ?>" />
+    <input type="hidden" name="workshop_date" id="workshop_date" value="<?php echo get_field( 'start_datetime' ) ?>" />
 
     <input type="hidden" name="waitlist" id="waitlist" value="<?php echo $event_full ? 'true': 'false'; ?>" />
 
@@ -83,9 +88,9 @@ if (!$disabled) : ?>
     <button class="btn block" type="submit">Submit</button>
 
     <?php wp_nonce_field( $nonce_name . '_nonce_action', $nonce_name . '_nonce_field' ); ?>
- 
+    <?php } ?>
 </form>
 </div>
 </div>
 <?php merton_handle_form( $_POST, $nonce_name, 'merton_competition_form_success' );
-endif; // !disabled
+}; // !disabled

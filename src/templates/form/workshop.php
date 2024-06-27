@@ -31,7 +31,10 @@ if (!$disabled) : ?>
             <option value="other">Other</option>
             <?php 
             $schools = get_posts([
-                'post_type' => 'school'
+                'post_type' => 'school', 
+                'numberposts' => 99,
+                'orderby' => 'title',
+                'order' => 'ASC'
             ]);
             foreach ( $schools as $school ) : ?>
                 <option value="<?php echo $school->ID; ?>"><?php echo $school->post_title; ?></option>
@@ -51,6 +54,8 @@ if (!$disabled) : ?>
     <input type="text" id="fax" name="fax">
 
     <input type="hidden" name="workshop_id" id="workshop_id" value="<?php echo get_the_ID() ?>" />
+    <input type="hidden" name="workshop_name" id="workshop_name" value="<?php echo get_the_title() ?>" />
+    <input type="hidden" name="workshop_date" id="workshop_date" value="<?php echo get_field( 'start_datetime' ) ?>" />
 
     <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY ?>"></div>
 

@@ -3,8 +3,14 @@
     $query_param_override = $args['query_param_override'] ?? $tax;
     $selected_terms = $_GET[$query_param_override];
     $selected_terms_array = array_filter( explode( ',', $selected_terms ) );
-    $terms = get_terms( $tax, [] );
  
+    $terms = get_terms( $tax, [] );
+
+    // $terms_arr = array_filter( $terms, function( $term ) {
+    //     return $term->count > 0;
+    // } );
+
+    // var_dump($terms_arr);
 ?>
 <div class="checkbox-group-container flex-1 text-center">
     <h3 class="filter-title"><?= $args['label'] ?><?php 

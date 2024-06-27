@@ -51,7 +51,8 @@ $entries = get_posts( [
         )
     )
 ] );
-if ( $entries ) { ?>
+/**
+ * if ( $entries ) { ?>
     <h4 class="mb-2 mt-4">Schools entered</h4>
     <?php foreach ( $entries as $entry ) :
         $school_id = get_field( 'school', $entry->ID );
@@ -60,7 +61,8 @@ if ( $entries ) { ?>
     <?php 
 
     endforeach;
-} ?>
+} 
+*/?>
 <a href="#competition_entry_form" class="btn mb-8">Enter the competition</a>
 <?php 
 

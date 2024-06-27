@@ -1,5 +1,5 @@
 <?php $downloads = get_field( 'files' );
-if ( $downloads ) : ?>
+if ( $downloads && count( $downloads) > 0 ) : ?>
     <div class="max-w-7xl mx-auto pb-12 px-12">
         <h2>Downloads</h2>
         <?php foreach ( $downloads as $download ) : ?>

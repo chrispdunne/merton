@@ -4,6 +4,8 @@ function merton_workshop_form_success( $form_reponse ) {
     $title = sanitize_text_field( $form_reponse['title'] );
     $phone = sanitize_text_field( $form_reponse['phone']);
     $workshop_id = sanitize_text_field( $form_reponse['workshop_id']);
+    $workshop_name = sanitize_text_field( $form_reponse['workshop_name']);
+    $workshop_date = sanitize_text_field( $form_reponse['workshop_date']);
     $email = sanitize_email( $form_reponse['email'] );
     $attendee = sanitize_text_field( $form_reponse['attendee'] );
     $delegates = sanitize_text_field( $form_reponse['delegates'] );
@@ -24,6 +26,8 @@ function merton_workshop_form_success( $form_reponse ) {
         'meta_input' => [
             'phone'         => $phone,
             'workshop'      => $workshop_id,
+            'workshop_name' => $workshop_name,
+            'workshop_date' => $workshop_date,
             'email'         => $email,
             'school'        => $school_id,
             'other_school'  => $other_school,

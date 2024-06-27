@@ -1,7 +1,25 @@
  <div class="">
+
+    <?php get_template_part( 'src/templates/filters-club_link' );
+    $sports = array_filter( explode( ',', $_GET['sport'] ) );
+    $tax_query = null;
+    if ( is_array( $sports ) && count( $sports ) > 0 ) {
+        $tax_query = [
+            [
+                'taxonomy' => 'sport',
+                'field' => 'slug',
+                'terms' => $sports,
+               
+            ]
+        ];
+    } ?>
+
     <?php $club_links = get_posts( [
         'post_type' => 'club_link',
         'numberposts' => 99,
+        'tax_query' => $tax_query,
+        'order' => 'ASC',
+        'orderby' => 'title'
     ] );
 
     if ( $club_links && !is_wp_error( $club_links ) && count( $club_links ) > 0 ) : ?>

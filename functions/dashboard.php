@@ -33,46 +33,76 @@ function merton_dashboard_widget_schemes() {
     }  
 }
 
-function merton_dashboard_widget_competitions() {
-   
+function merton_get_entries( $entry_type ) {
     $user = new WP_User( get_current_user_id() ); 
     
     // Should it also query by school?
     $args = array(
         'meta_key'          => 'email',
         'meta_value'        => $user->user_email,
-        'post_type'         => 'competition_entry',
+        'post_type'         => $entry_type,
         'posts_per_page'    => 99
     );
-    $entries = get_posts( $args );   
+    $entries = get_posts( $args );  
+    return $entries;
+}
+
+function merton_dashboard_widget_competitions() {
+   
+    $entries = merton_get_entries( 'competition_entry' );
     
     foreach( $entries as $entry ) {
         $competition_id = get_field( 'competition', $entry->ID );
         $competition = get_post(  $competition_id );
-        echo "<div><a target='_blank' href='" . $competition->guid . "'>$competition->post_title</a></div>";
+        $waitlist = get_field( 'waitlist', $entry->ID );
+        if ( !$waitlist ) {
+            echo "<div><a target='_blank' href='" . $competition->guid . "'>$competition->post_title</a></div>";
+        }
     }
 
 }
 
 function merton_dashboard_widget_workshops() {
    
-    $user = new WP_User( get_current_user_id() ); 
-    
-    // Should it also query by school?
-    $args = array(
-        'meta_key'          => 'email',
-        'meta_value'        => $user->user_email,
-        'post_type'         => 'workshop_entry',
-        'posts_per_page'    => 99
-    );
-    $entries = get_posts( $args );   
+    $entries = merton_get_entries( 'workshop_entry' );
     
     foreach( $entries as $entry ) {
         $workshop_id = get_field( 'workshop', $entry->ID );
         $workshop = get_post(  $workshop_id );
-        echo "<div><a target='_blank' href='" . $workshop->guid . "'>$workshop->post_title</a></div>";
+        $waitlist = get_field( 'waitlist', $entry->ID );
+        if ( !$waitlist ) {
+            echo "<div><a target='_blank' href='" . $workshop->guid . "'>$workshop->post_title</a></div>";
+        }
     }
 
+}
+
+function merton_dashboard_widget_waitlist() {
+   
+    $comp_entries = merton_get_entries( 'competition_entry' );
+    $workshop_entries = merton_get_entries( 'workshop_entry' );
+
+    if (count( $comp_entries ) > 0 || count( $workshop_entries ) > 0 ) {
+        echo "<p>You have signed up to the Waiting List for the following events. We will be in touch if a space opens up:</p>";
+    }
+
+    foreach( $comp_entries as $c_entry ) {
+        $competition_id = get_field( 'competition', $c_entry->ID );
+        $competition = get_post(  $competition_id );
+        $waitlist = get_field( 'waitlist', $c_entry->ID );
+        if ( $waitlist ) {
+            echo "<div><a target='_blank' href='" . $competition->guid . "'>$competition->post_title</a></div>";
+        }
+    }
+
+    foreach( $workshop_entries as $w_entry ) {
+        $workshop_id = get_field( 'workshop', $w_entry->ID );
+        $workshop = get_post(  $workshop_id );
+        $waitlist = get_field( 'waitlist', $w_entry->ID );
+        if ( !$waitlist ) {
+            echo "<div><a target='_blank' href='" . $workshop->guid . "'>$workshop->post_title</a></div>";
+        }
+    }
 }
 
 function merton_video_widget() {
@@ -104,6 +134,8 @@ function merton_custom_dashboard_widgets() {
     wp_add_dashboard_widget( 'custom_merton_widget', 'Schemes Of Work', 'merton_dashboard_widget_schemes');
     wp_add_dashboard_widget( 'custom_merton_widget_2', 'Competitions entered', 'merton_dashboard_widget_competitions');
     wp_add_dashboard_widget( 'custom_merton_widget_3', 'Workshops signed up to', 'merton_dashboard_widget_workshops');
+    wp_add_dashboard_widget( 'custom_merton_widget_4', 'Event Waiting List', 'merton_dashboard_widget_waitlist');
+
 
     // wp_add_dashboard_widget( 'custom_merton_widget_4', 'Videos', 'merton_video_widget');
 }

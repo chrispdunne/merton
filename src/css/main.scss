@@ -125,25 +125,39 @@ body {
 }
 
 h1 {
-	font-size: theme("fontSize.6xl");
+	font-size: theme("fontSize.4xl");
 	font-weight: bold;
 	margin: 10px 0;
 }
 h2 {
-	font-size: theme("fontSize.3xl");
-	font-weight: bold;
-	margin: 10px 0;
-	color: var(--purple);
-}
-h3 {
 	font-size: theme("fontSize.2xl");
 	font-weight: bold;
 	margin: 10px 0;
 	color: var(--purple);
 }
-h4 {
+h3 {
 	font-size: theme("fontSize.xl");
+	font-weight: bold;
+	margin: 10px 0;
 	color: var(--purple);
+}
+h4 {
+	font-size: theme("fontSize.lg");
+	color: var(--purple);
+}
+@media only screen and (min-width:768px) {
+	h1 {
+		font-size: theme("fontSize.6xl");	 
+	}
+	h2 {
+		font-size: theme("fontSize.3xl");	 
+	}
+	h3 {
+		font-size: theme("fontSize.2xl"); 
+	}
+	h4 {
+		font-size: theme("fontSize.xl");	 
+	}
 }
 #fax {
 	visibility: hidden;

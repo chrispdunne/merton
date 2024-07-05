@@ -25,7 +25,7 @@ get_header(); ?>
 			
 			?>
 			
-            <div class="grid grid-cols-3 gap-12 max-w-5xl mx-auto my-12">
+            <div class="md:grid px-5 grid-cols-3 gap-12 max-w-5xl mx-auto my-12">
 	 
 			<?php 
 

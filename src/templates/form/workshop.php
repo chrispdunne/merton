@@ -2,7 +2,7 @@
 $disabled = get_field( 'disable_workshop_entries', 'option' ) ;
 if (!$disabled) : ?>
 <div class="green-bg">
-<div class="max-w-3xl mx-auto py-12">
+<div class="max-w-3xl mx-auto py-12 px-5">
 <form method="post" id="workshop_entry_form">
 
     <label class="block mb-6" for="title">Full name

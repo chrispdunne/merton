@@ -27,7 +27,7 @@ if ( $competition_entries && !is_wp_error( $competition_entries ) )  {
 $disabled = get_field( 'disable_competition_entries', 'option' );
 if (!$disabled) { ?>
 <div class="green-bg">
-<div class="max-w-3xl mx-auto py-12">
+<div class="max-w-3xl mx-auto py-12 px-5">
 <form method="post" id="competition_entry_form">
 
     <?php if ( get_field( 'merton_only' ) && !is_user_logged_in() ) { ?>

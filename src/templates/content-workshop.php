@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>">
 
-	<div class="max-w-5xl mx-auto py-12 flex flex-row-reverse">
+	<div class="max-w-5xl mx-auto py-12 md:flex flex-row-reverse">
 
 		<?php get_template_part( 
 			'src/templates/sidebar',
@@ -19,7 +19,7 @@
 			[ 'template_content' => 'src/templates/workshop/details' ] ) 
 		?>
 
-		<div class="entry-content w-2/3 mr-12">
+		<div class="entry-content md:w-2/3 md:mr-12 p-5">
 			<?php
 			the_content(
 				sprintf(

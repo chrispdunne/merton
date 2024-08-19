@@ -7,7 +7,7 @@
         } else {
             echo get_the_date( null, $ID );
         } ?></span>
-    <h3 class="h-28 overflow-hidden"><?php echo get_the_title( $ID ) ?></h3>
+    <h3 class="md:h-28 overflow-hidden"><?php echo get_the_title( $ID ) ?></h3>
     <p class="text-sm h-24"><?php 
         if ( !$args || !$args['excerpt'] === false ) {
             echo get_the_excerpt( $ID );

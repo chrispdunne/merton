@@ -1,4 +1,9 @@
 
+<div class="bg-gray-300 py-3 pre-header">
+    <div class="max-w-7xl mx-auto flex justify-end pr-5">
+        <?php echo do_shortcode('[gtranslate]') ?>
+    </div>
+</div>
 <header id="masthead" class="site-header md:flex justify-between items-center max-w-7xl mx-auto p-5">
     <div class="site-branding">
         <?php logo( is_front_page() ) ?>

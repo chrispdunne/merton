@@ -1,6 +1,6 @@
 <?php
-$page_title = $args['title'] ? $args['title']  : get_the_title();
-$sub_title = $args['subtitle'] ? $args['subtitle'] : get_field( 'tagline' );
+$page_title = isset( $args['title'] ) ? $args['title']  : get_the_title();
+$sub_title = isset( $args['subtitle'] ) ? $args['subtitle'] : get_field( 'tagline' );
 if ( strlen( $page_title ) > 40 ) {
     $long_title = true;
 } 

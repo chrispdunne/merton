@@ -1,8 +1,10 @@
-<div class="py-12">
-<h2 class="text-center text-2xl font-bold my-8">Upcoming competitions</h2>
+
+<div class="py-12 light-grey-bg">
+<h2 class="text-center text-2xl font-bold my-8">Upcoming Workshops</h2>
 <?php
 $date_now = date('Y-m-d');
-$competitions = get_posts( 
+ 
+$workshops = get_posts( 
     [
         'numberposts'      => 3,
         'category'         => 0,
@@ -18,24 +20,25 @@ $competitions = get_posts(
                 'compare' => '>=',
             ]
         ],
-        'post_type'        => 'competition',
+        'post_type'        => 'workshop',
         'suppress_filters' => true
     ]
 );
-if ( $competitions ) {
+if ( $workshops ) {
     echo '<div class="text-center">';
     echo '<div class="px-4 lg:px-0  max-w-5xl mx-auto md:grid gap-4 grid-cols-3">';
 
-    foreach ( $competitions as $comp ) {
-        get_template_part( 'src/templates/loop', null, [ 'ID' => $comp->ID, 'excerpt' => false, 'button'=>false] );
+    foreach ( $workshops as $workshop ) {
+        get_template_part( 'src/templates/loop', null, [ 'ID' => $workshop->ID, 'excerpt' => false, 'button'=>false] );
     }
     echo '</div>';
     echo '<div><a class="btn mt-8" href="';
-    echo get_post_type_archive_link( 'competition' );
-    echo '">View all competitions</a></div>';
+    echo get_post_type_archive_link( 'workshop' );
+    echo '">View all workshops</a></div>';
     echo '</div>';
-}  ?>
-</div><!--/competition block-->
+}   ?>
+</div><!--/workshop block-->
+
  
 
  

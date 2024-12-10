@@ -1,4 +1,4 @@
-<div class="my-12">
+<div class="py-12 light-grey-bg">
 <h2 class="text-center text-2xl font-bold my-8">Latest News</h2>
 <?php
 $posts = get_posts( 

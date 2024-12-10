@@ -16,7 +16,7 @@
 
     <?php $club_links = get_posts( [
         'post_type' => 'club_link',
-        'numberposts' => 99,
+        'numberposts' => 300,
         'tax_query' => $tax_query,
         'order' => 'ASC',
         'orderby' => 'title'
